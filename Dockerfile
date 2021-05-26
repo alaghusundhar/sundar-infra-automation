@@ -1,6 +1,8 @@
 #FROM registry.suse.com/suse/sles12sp5:6.5.179
 FROM ubuntu:latest
 
+LABEL maintainer="alaghusundhar@hotmail.com"
+
 RUN \
 # Update
 apt-get update -y && \
@@ -23,6 +25,6 @@ RUN mv terraform /usr/local/bin/
 
 RUN terraform --version
 
-COPY providers.tf /app/bizx
+COPY provider.tf /app/bizx
 
 COPY resource.tf /app/bizx 
